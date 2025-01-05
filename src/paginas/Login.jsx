@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Alerta from "../componentes/Alerta"
 import clienteAxios from "../config/axios";
 import useAuth from "../hooks/useAuth";
+import logo from "../assets/logo.svg";
+
 
 const Login = () => {
   const [alerta, setAlerta] = useState("");
@@ -56,7 +58,7 @@ const Login = () => {
     <>
       <div className="my-16 md:flex overflow-hidden justify-center items-center max-h-full hidden ">
         <img
-          src="../public/shield-cat-solid.svg"
+          src={logo}
           alt="logo"
           className="max-h-[600px] 3xl:max-h-[800px]"
         />
