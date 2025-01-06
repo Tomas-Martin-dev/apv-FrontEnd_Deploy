@@ -53,8 +53,8 @@ const EditarPassword = () => {
                 <span className="text-indigo-600 font-bold">Contraseña Aqui</span>
             </p>
 
-            <div className="flex justify-center mb-10">
-                <div className="w-full md:w-1/3 bg-white shadow rounded-lg p-5">
+            <div className="flex justify-center mb-10 px-2">
+                <div className="w-full md:w-2/3 bg-white shadow rounded-lg p-5">
 
                     <div className=" my-4">
                         <label className="uppercase font-bold text-gray-600">Contraseña Actual</label>

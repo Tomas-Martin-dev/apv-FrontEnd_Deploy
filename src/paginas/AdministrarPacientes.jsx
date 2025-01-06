@@ -7,7 +7,7 @@ const AdministrarPacientes = () => {
   
 
   return (
-    <div className='flex flex-col md:flex-row gap-2'>
+    <div className='flex flex-col md:flex-row gap-2 px-2'>
       <button 
       type="button"
       className="bg-indigo-600 text-white font-bold rounded-md uppercase mx-10 p-3 mb-10 md:hidden"
@@ -20,7 +20,7 @@ const AdministrarPacientes = () => {
       </div>
 
       <div className="md:w-1/2 lg:w-3/5">
-        <ListadoPacientes/>
+        <ListadoPacientes setMostrarFormulario={setMostrarFormulario} />
       </div>
     </div>
 

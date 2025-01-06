@@ -52,8 +52,8 @@ const Formulario = () => {
     const { msg } = alerta;
     return (
         <>
-            <p className='text-lg text-center mb-10'>Añade tus pacientes y
-                <span className='text-indigo-400 font-bold'> Administralos</span>
+            <p className='text-2xl text-semibold text-center mb-10'>Añade tus pacientes y
+                <span className='text-indigo-600 font-semibold'> Administralos</span>
             </p>
 
             <form
@@ -133,8 +133,8 @@ const Formulario = () => {
                     type="submit"
                     value={id ? "Editar" : "Agregar Paciente"}
                     onClick={handleSubmit}
-                    className='bg-indigo-500 w-full p-2 uppercase font-semibold hover:bg-indigo-600
-                cursor-pointer transition-colors rounded-sm text-white' />
+                    className=' bg-indigo-600 hover:bg-indigo-700 w-full p-2 uppercase font-semibold
+                    cursor-pointer transition-colors rounded-sm text-white' />
                 
                 {msg && <Alerta
                     alerta={alerta}

@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 
 const AdminNav = () => {
   return (
-    <nav className=' flex gap-5'>
+    <nav className=' flex gap-5 px-2'>
         <Link
         to="/admin/editar-password"
         className=' text-gray-600 hover:text-gray-800 font-semibold'

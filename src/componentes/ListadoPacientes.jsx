@@ -1,7 +1,7 @@
 import usePaciente from "../hooks/usePaciente"
 import Paciente from "./Paciente";
 
-const ListadoPacientes = () => {
+const ListadoPacientes = ({setMostrarFormulario}) => {
   const {paciente} = usePaciente()
   
   return (
@@ -16,6 +16,7 @@ const ListadoPacientes = () => {
             <Paciente
               key={pac._id}
               paciente={pac}
+              setMostrarFormulario={setMostrarFormulario}
             />
           ))}
         </>

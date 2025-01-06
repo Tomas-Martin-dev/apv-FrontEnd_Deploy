@@ -47,7 +47,10 @@ const Login = () => {
     }
     catch (error) {
       console.log(error);
-      setAlerta({ msg: error.response.data.msg, error: true })
+      setAlerta({ msg: error.response.data.msg, error: true });
+      setTimeout(() => {
+        setAlerta({})
+      }, 3000);
     }
   }
 
@@ -77,8 +80,8 @@ const Login = () => {
 
       <div className="my-16 bg-white flex flex-col items-center rounded-lg shadow-xl
         max-h-[600px] h-full pb-24 pt-24 px-3
-        md:max-h-[515px] md:pb-10 md:pt-10 
-        lg:max-h-[515px] lg:my-10
+        md:max-h-[515px] md:py-10  
+        lg:max-h-[560px] lg:my-4 lg:py-11
         xl:max-h-[640px] xl:pb-20 xl:pt-16
         2xl:max-h-[700px] 2xl:pb-28 2xl:pt-24 2xl:my-4
         3xl:max-h-[800px] 3xl:pb-48 3xl:pt-32 3xl:my-4">

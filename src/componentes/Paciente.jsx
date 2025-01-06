@@ -1,6 +1,6 @@
 import usePaciente from "../hooks/usePaciente";
 
-const Paciente = ({paciente}) => {
+const Paciente = ({ paciente, setMostrarFormulario }) => {
     
     const { email, fechaAlta, nombre, propietario, diagnostico, _id } = paciente;
     
@@ -14,6 +14,10 @@ const Paciente = ({paciente}) => {
         }).format(nuevaFecha);
     };
     
+    const handleEditar = () => {
+        setEdicion(paciente);
+        setMostrarFormulario(true);
+      };
 
     return (
         <div className='px-5 bg-white my-2 shadow-md py-5 rounded-xl '>
@@ -47,7 +51,7 @@ const Paciente = ({paciente}) => {
                 <button 
                 type="button"
                 className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 text-white uppercase rounded-lg"
-                onClick={ () => setEdicion(paciente)}
+                onClick={ handleEditar }
                 >Editar
                 </button>
                 <button 
