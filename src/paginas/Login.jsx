@@ -19,13 +19,24 @@ const Login = () => {
     e.preventDefault();
 
     if ([contraseña, email].includes("")) {
+      
       setAlerta({ msg: "Todos los campos son obligatorios", error: true });
+      setTimeout(() => {
+        setAlerta({})
+      }, 3000);
+
       return
     }
     if (contraseña.length < 6) {
+
       setAlerta({ msg: "La contraseña debe tener 6 caracteres de minimo", error: true });
+      setTimeout(() => {
+        setAlerta({})
+      }, 3000);
+      
       return
     }
+    
     setAlerta({})
 
     try {
@@ -86,8 +97,9 @@ const Login = () => {
 
           <form action="" className=" flex flex-col gap-6 px-5 " onSubmit={handleSubmit}>
 
-            {msg && <Alerta
+            {msg && <Alerta 
               alerta={alerta}
+              className= "mt-6"
             />}
 
             <div>

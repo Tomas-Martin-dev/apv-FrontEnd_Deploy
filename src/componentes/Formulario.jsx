@@ -18,6 +18,9 @@ const Formulario = () => {
         e.preventDefault()
         if ([nombre, propietario, email, fechaAlta, diagnostico].includes("")) {
             setAlerta({ msg: "Hay Campos Vacios", error: true })
+            setTimeout(() => {
+                setAlerta({});        
+            }, 3000);
             return
         }
         guardarPaciente({nombre, propietario, email, fechaAlta, diagnostico, id})
@@ -131,10 +134,11 @@ const Formulario = () => {
                     value={id ? "Editar" : "Agregar Paciente"}
                     onClick={handleSubmit}
                     className='bg-indigo-500 w-full p-2 uppercase font-semibold hover:bg-indigo-600
-                cursor-pointer transition-colors rounded-sm text-white mb-5' />
+                cursor-pointer transition-colors rounded-sm text-white' />
                 
                 {msg && <Alerta
                     alerta={alerta}
+                    className= "mt-6"
                 />}
             </form>
         </>
