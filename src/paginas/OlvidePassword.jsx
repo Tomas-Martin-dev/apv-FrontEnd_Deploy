@@ -11,6 +11,9 @@ const OlvidePassword = () => {
     e.preventDefault();
     if (email === "") {
       setAlerta({ msg: "Es obligarotio ingresar el email de registro", error: true })
+      setTimeout(() => {
+        setAlerta({});
+      }, 3000);
       return
     }
 
@@ -27,6 +30,9 @@ const OlvidePassword = () => {
         msg: error.response.data.msg,
         error: true
       })
+      setTimeout(() => {
+        setAlerta({});
+      }, 3000);
     }
 
   }
@@ -36,7 +42,7 @@ const OlvidePassword = () => {
     <>
       <div className="justify-self-center bg-white px-4 py-12 rounded-lg shadow-xl select-none">
 
-        <h1 className="text-violet-950 text-5xl font-bold text-center mt-7 mb-12">
+        <h1 className="text-violet-950 text-3xl md:text-5xl font-bold text-center mt-2 mb-12">
           Recupera tu
           <span className="text-gray-500"> Password </span>
         </h1>
@@ -45,31 +51,32 @@ const OlvidePassword = () => {
 
           {msg && <Alerta
             alerta={alerta}
+            className= "mb-6"
           />}
 
           <form action="" className=" flex flex-col gap-2" onSubmit={handlerSubmit}>
 
             <div>
-              <label className=" uppercase text-gray-600 block text-xl font-bold">
+              <label className=" uppercase text-gray-600 block font-bold md:text-xl">
                 Email
               </label>
               <input
                 type="email"
                 placeholder="Ingrese su Email"
-                className="border w-full p-3 mt-1 bg-gray-50 rounded-xl"
+                className="border w-full p-3 mt-1 bg-gray-50 rounded-xl text-sm md:text-base"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
               />
             </div>
 
-            <h3 className="text-slate-600 text-lg px-6">
+            <h3 className="text-slate-600 md:text-lg px-1 md:px-6 text-center">
               Te enviaremos por Email las instrucciones para recuperar tu contraseña
             </h3>
 
             <input
               type="submit"
               value="Enviar Correo"
-              className="w-full md:max-w-80 mx-auto bg-indigo-600 text-white border rounded-xl py-3 px-13 mt-10 uppercase hover:bg-indigo-700 hover:cursor-pointer transition-colors"
+              className="w-full md:max-w-80 mx-auto bg-indigo-600 text-white border rounded-xl py-2 mt-10 uppercase text-sm md:text-lg hover:bg-indigo-700 hover:cursor-pointer transition-colors"
             />
 
             <Link

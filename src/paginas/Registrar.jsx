@@ -1,4 +1,4 @@
-import { Link, useNavigation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import clienteAxios from "../config/axios";
 import { useState } from "react";
 import Alerta from "../componentes/Alerta";
@@ -10,18 +10,29 @@ const Registrar = () => {
   const [ password, setPassword] = useState("");
   const [ repetirPassword, setRepetirPassword] = useState("");
   const [ alerta, setAlerta] = useState({})
+  const navegar = useNavigate();
   
+
   const handleSubmit = async e =>{
     e.preventDefault();
-    
+
     if ([nombre,email,password,repetirPassword].includes("")) {
       setAlerta({msg: "Hay campos vacios en el Formulario!!!", error: true});
+      setTimeout(() => {
+        setAlerta({});
+      }, 3000);
       return
     }if (password !== repetirPassword) {
       setAlerta({msg: "Password incorrectos", error: true});
+      setTimeout(() => {
+        setAlerta({});
+      }, 3000);
       return
     }if (password.length < 6) {
       setAlerta({msg: "El password debe tener 6 caracteres de minimo", error: true});
+      setTimeout(() => {
+        setAlerta({});
+      }, 3000);
       return
     }
     setAlerta({}); // alerta vacia porque pasaron las validaciones
@@ -34,8 +45,8 @@ const Registrar = () => {
         error: false
       });
       setTimeout(() => {
-        window.location.reload()
-      }, 3000);
+        navegar("/")
+      }, 5000);
     } catch (error) {
       setAlerta({
         msg : error.response.data.msg,

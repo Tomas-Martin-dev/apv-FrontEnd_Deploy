@@ -2,12 +2,13 @@ import { Outlet, useLocation,useParams } from "react-router-dom";
 
 const AuhtLayout = () => {
   const location = useLocation();
+  const params = useParams();
+  const { token, id } = params;
+
   const isRecoverPageRecuperarP = location.pathname.endsWith("/recuperar-password");
   const isRecoverPageRegistrar = location.pathname.endsWith("/registrar");
+  const isRecoverPageConfirmarCuenta = location.pathname.endsWith(`/confirmar-cuenta/${id}`);
   
-  const params = useParams();
-  const { token } = params;
-
   let mainClasses;
   if (isRecoverPageRecuperarP) {
     mainClasses = "min-w-full container grid grid-cols-1 py-12 px-5";
@@ -17,6 +18,9 @@ const AuhtLayout = () => {
   }
   else if (location.pathname.includes(token)) {
     mainClasses = "min-w-full container grid grid-cols-1 py-12 px-5";    
+  }
+  else if (isRecoverPageConfirmarCuenta) {
+    mainClasses = "min-w-full container grid grid-cols-1 py-12 px-5";        
   }
   else{
     mainClasses = "min-w-full max-h-screen min-h-screen box-border container grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 px-3 md:px-12";

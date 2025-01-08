@@ -10,6 +10,7 @@ import AdministrarPacientes from "./paginas/AdministrarPacientes";
 import EditarPerfil from "./paginas/EditarPerfil";
 import EditarPassword from "./paginas/EditarPassword";
 
+
 import { AuhtProvider } from "./context/AuthProvider";
 import { PacienteProvider } from "./context/PacienteProvider";
 

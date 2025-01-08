@@ -32,14 +32,23 @@ const NuevoPassword = () => {
     e.preventDefault();
     if (contraseña !== repetirContraseña) {
       setAlerta({ msg: "Contraseñas incorrectas", error: true });
+      setTimeout(() => {
+        setAlerta({})
+      }, 3000);
       return
     }
     if ([contraseña, repetirContraseña].includes("")) {
       setAlerta({ msg: "Formularios Vacios", error: true });
+      setTimeout(() => {
+        setAlerta({})
+      }, 3000);
       return
     }
     if (contraseña.length < 6) {
       setAlerta({ msg: "La contraseña debe tener 6 caracteres de minimo", error: true });
+      setTimeout(() => {
+        setAlerta({})
+      }, 3000);
       return
     }
 
@@ -64,42 +73,43 @@ const NuevoPassword = () => {
     <>
       {tokenOk && <div className="justify-self-center bg-white px-4 py-12 rounded-lg shadow-xl select-none">
 
-        <h1 className="text-violet-950 text-3xl font-bold text-center mt-7 mb-7 px-7">
+        <h1 className="text-violet-950 text-3xl md:text-5xl font-bold text-center mt-7 mb-7 md:mb-11 px-7">
           ¡Ingrese su Nueva
           <span className="text-gray-500"> Contraseña! </span>
         </h1>
 
         {msg && <Alerta
           alerta={alerta}
+          className="mb-6"
         />}
 
         <form
           action=""
-          className=" flex flex-col gap-5 mt-7"
+          className=" flex flex-col gap-5"
           onSubmit={handleSubmit}
         >
 
           <div>
-            <label className=" uppercase text-gray-600 block text-lg font-bold">
+            <label className=" uppercase text-gray-600 block md:text-xl font-bold">
               Password
             </label>
             <input
               type="password"
               placeholder="Ingrese su nuevo Password"
-              className="border w-full p-3 mt-1 bg-gray-50 rounded-xl"
+              className="border w-full p-3 mt-1 bg-gray-50 rounded-xl text-sm md:text-base"
               value={contraseña}
               onChange={e => setContraseña(e.target.value)}
             />
           </div>
 
           <div>
-            <label className=" uppercase text-gray-600 block text-lg font-bold">
+            <label className=" uppercase text-gray-600 block md:text-xl font-bold">
               Password
             </label>
             <input
               type="password"
               placeholder="Repite el Password"
-              className="border w-full p-3 mt-1 bg-gray-50 rounded-xl"
+              className="border w-full p-3 mt-1 bg-gray-50 rounded-xl text-sm md:text-base"
               value={repetirContraseña}
               onChange={e => setRepetirContraseña(e.target.value)}
             />
@@ -108,7 +118,7 @@ const NuevoPassword = () => {
           <input
             type="submit"
             value="Registrarte"
-            className="w-full md:max-w-72 mx-auto bg-indigo-600 text-white border rounded-xl py-2 px-12 uppercase hover:bg-indigo-700 hover:cursor-pointer transition-colors"
+            className="w-full md:max-w-80 mx-auto bg-indigo-600 text-white border rounded-xl py-2 uppercase text-sm md:text-lg hover:bg-indigo-700 hover:cursor-pointer transition-colors"
           />
 
         </form>
