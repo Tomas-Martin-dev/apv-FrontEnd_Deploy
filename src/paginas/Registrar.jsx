@@ -39,7 +39,7 @@ const Registrar = () => {
 
     // Crear User
     try {
-      const repuesta = await clienteAxios.post(`/veterinario`, {nombre, email, password});
+      await clienteAxios.post(`/veterinario`, {nombre, email, password});
       setAlerta({
         msg: "Usuario Creado, Revisa tu Email para confirmar tu cuenta",
         error: false
