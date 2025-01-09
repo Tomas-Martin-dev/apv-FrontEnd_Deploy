@@ -1,8 +1,28 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Patient Manager for Veterinary Medicine
 
-Currently, two official plugins are available:
+App developed with the classic "MERN" stack.
+- Mongoose
+- Express
+- React
+- Node
+Adding the "Tailwind" framework.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This app was designed and created with the concepts of SPA and CRUD. 
+
+## Features
+
+- Responsive
+- User Authentication
+- JWT for Authentication
+- Patient Management
+
+## Future Features
+
+- Light/dark mode toggle
+- Integration with Calendars
+- Reminders and Notifications
+## Author
+
+- [@Tomas-Martin-dev](https://github.com/Tomas-Martin-dev).
+
