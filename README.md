@@ -6,6 +6,7 @@ App developed with the classic "MERN" stack.
 - Express
 - React
 - Node
+  
 Adding the "Tailwind" framework.  
 
 This app was designed and created with the concepts of SPA and CRUD. 
