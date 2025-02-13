@@ -8,11 +8,15 @@ export const PacienteProvider =  ({children}) => {
     const [paciente, setPaciente] =  useState([]);
     const [pacienteEdit, setPacienteEdit] =  useState({});
     const { auth } = useAuth();
+    
     useEffect(()=>{
         const traerPacientesGuardados = async ()=>{
             try {
                 const token = localStorage.getItem("token");
-                if (!token) return
+                if (!token) {
+                    setPaciente([])
+                    return   
+                }
                 const config = {
                     headers:{
                         "Content-Type": "application/json",
