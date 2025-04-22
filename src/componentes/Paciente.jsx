@@ -20,7 +20,7 @@ const Paciente = ({ paciente, setMostrarFormulario }) => {
       };
 
     return (
-        <div className='px-5 bg-white my-2 shadow-md py-5 rounded-xl '>
+        <div className='px-5 bg-white mb-2 shadow-md py-5 rounded-md '>
             <p className=' font-medium uppercase text-gray-600 mb-1'>
                 Nombre: <samp className='font-normal normal-case text-black'>
                     {nombre}

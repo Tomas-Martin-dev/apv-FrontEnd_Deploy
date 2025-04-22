@@ -8,7 +8,7 @@ const ListadoPacientes = ({setMostrarFormulario}) => {
     <>
       {paciente.length ? (
         <>
-          <h1 className=" text-2xl font-semibold text-center mb-10" 
+          <h1 className=" text-2xl font-semibold text-center min-h-16 lg:min-h-0" 
           >Listado de tus<span className="text-indigo-600" 
           >&nbsp;Pacientes </span></h1> 
 
@@ -22,7 +22,7 @@ const ListadoPacientes = ({setMostrarFormulario}) => {
         </>
       ) : (
         <>
-          <h1 className="uppercase text-2xl font-semibold text-center" 
+          <h1 className="uppercase text-2xl font-semibold text-center lg:min-h-16" 
           >No tienes
           <span className="text-indigo-600" 
           >&nbsp;pacientes </span> 

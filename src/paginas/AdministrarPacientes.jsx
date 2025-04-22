@@ -15,11 +15,11 @@ const AdministrarPacientes = () => {
       >{!mostrarFormulario ? "Mostrar Formulario" : "Ocultar Formulario"}
       </button>
       
-      <div className={`${ mostrarFormulario ? "block" : "hidden" } md:block md:w-1/2 lg:w-2/5`}>
+      <div className={`${ mostrarFormulario ? "flex" : "hidden" } md:flex md:w-1/2 lg:w-2/5 flex-col gap-10`}>
         <Formulario/>
       </div>
 
-      <div className="md:w-1/2 lg:w-3/5">
+      <div className="md:w-1/2 lg:w-3/5 flex flex-col gap-10">
         <ListadoPacientes setMostrarFormulario={setMostrarFormulario} />
       </div>
     </div>

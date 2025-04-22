@@ -37,6 +37,7 @@ const AuhtProvider = ({ children }) => {
     }, [])
 
     const cerrarSession = ()=>{
+        console.log("session cerrada");
         localStorage.removeItem("token");
         setAuth({});
     }

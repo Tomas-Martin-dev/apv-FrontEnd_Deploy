@@ -52,7 +52,7 @@ const Formulario = () => {
     const { msg } = alerta;
     return (
         <>
-            <p className='text-2xl text-semibold text-center mb-10'>Añade tus pacientes y
+            <p className='text-2xl text-semibold text-center'>Añade tus pacientes y
                 <span className='text-indigo-600 font-semibold'> Administralos</span>
             </p>
 

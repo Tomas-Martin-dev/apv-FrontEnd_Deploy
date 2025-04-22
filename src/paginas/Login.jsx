@@ -59,7 +59,9 @@ const Login = () => {
   useEffect(() => {
     const verificarTokenExistente = () => {
       const token = localStorage.getItem('token');
+      
       if (token) {
+        cerrarSession()
         localStorage.removeItem('token');
         return
       } 

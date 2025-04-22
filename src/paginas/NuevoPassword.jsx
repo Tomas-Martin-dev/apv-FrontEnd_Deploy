@@ -10,7 +10,7 @@ const NuevoPassword = () => {
   const [alerta, setAlerta] = useState("");
   const [tokenOk, setTokenOk] = useState(false);
   const [contraseñaUpdate, setContraseñaUpdate] = useState(false);
-  let [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   const navigation = useNavigate()
 
