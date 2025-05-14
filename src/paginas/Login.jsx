@@ -15,7 +15,7 @@ const Login = () => {
   const [contraseña, setContraseña] = useState("");
 
   const navigation = useNavigate()
-
+  
   const handleSubmit = async e => {
     e.preventDefault();
 
@@ -39,15 +39,15 @@ const Login = () => {
     }
     
     setAlerta({})
-
+    
     try {
+      setAlerta({msg: "Consultando Servidor..." , alert: true });
       const { data } = await clienteAxios.post("/veterinario/login", { email, contraseña })
       localStorage.setItem("token", data.token);
       setAuth(data);
       navigation("/admin");
     }
     catch (error) {
-      console.log(error);
       setAlerta({ msg: error.response.data.msg, error: true });
       setTimeout(() => {
         setAlerta({})
@@ -67,6 +67,8 @@ const Login = () => {
       } 
     };
     verificarTokenExistente();
+    setAlerta({msg: "La primer consulta podriar demorar causa del servidor en suspenso" , msgg: true });
+
   }, [])
 
   const { msg } = alerta;
